@@ -1,12 +1,11 @@
-import { Fragment } from 'react';
-import Head from 'next/head';
-import Logo from './Logo';
-import Link from 'next/link';
+import { Fragment } from "react";
+import Logo from "./Logo";
+import Link from "next/link";
 export default Header => (
   <Fragment>
     <style>{`
       header {
-        width: 100%;
+        max-width: 100%;
         background: #FFFFFF;
       }
       h2 {
@@ -41,13 +40,17 @@ export default Header => (
         <Logo />
         <ul>
           <li>
-            <Link href="/shop"><a>Shop</a></Link>
+            <Link href="/shop">
+              <a>Shop</a>
+            </Link>
           </li>
           <li>
-            <Link href="/about"><a>About</a></Link>
+            <Link href="/about">
+              <a>About</a>
+            </Link>
           </li>
         </ul>
       </nav>
     </header>
   </Fragment>
-)
+);

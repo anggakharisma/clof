@@ -34,7 +34,7 @@ export default () => (
         padding: 12px 20px;
         color: #FFFFFF;
         font-size: 1.3em;
-        font-weight: 800;
+        font-weight: 500;
         position: absolute;
         transition: all .1s ease-in-out;
         border-radius: 2px;
