@@ -8,7 +8,7 @@ export default () => (
         background: #FF9E9E;
         border-top: 24px solid white;
         border-bottom: 24px solid white;
-        height: 90%;
+        height: 90vh;
         width: 100%;
         max-width: 100%;
         display: flex;
@@ -22,7 +22,7 @@ export default () => (
         color: #FFF;
       }
       .image img {
-        width: 80%;
+        width: 85%;
       }
       .call-to-action {
         background: #FAD284;
@@ -48,7 +48,7 @@ export default () => (
         position: absolute;
       }
       .image {
-        margin-left: calc(100vw / 20);
+        margin-left: calc(100vw / 10);
         display: flex;
         justify-content: flex-end;
         position: relative;
@@ -56,26 +56,7 @@ export default () => (
       }
     `}</style>
     <section id="main-hero">
-      <svg width="1440px" height="6px" viewBox="0 0 1440 6" version="1.1">
-        <g
-          id="Page-1"
-          stroke="none"
-          strokeWidth="1"
-          fill="none"
-          fillRule="evenodd"
-          strokeDasharray="9,21"
-          strokeLinecap="square"
-        >
-          <g
-            id="Desktop-HD"
-            transform="translate(-0.000000, -387.000000)"
-            stroke="#FFFFFF"
-            strokeWidth="6"
-          >
-            <path d="M1.13686838e-13,390 L1465.03749,390" id="Line" />
-          </g>
-        </g>
-      </svg>
+
       <h1>
         Clothes <br /> For <br /> All
       </h1>

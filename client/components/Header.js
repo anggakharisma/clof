@@ -7,6 +7,12 @@ export default Header => (
       header {
         max-width: 100%;
         background: #FFFFFF;
+        position: fixed;
+        z-index: 30;
+        right: 0;
+        left: 0;
+        top: 0;
+        border-bottom: 2px solid #A9EEC2;
       }
       h2 {
         padding: 0;

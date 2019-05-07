@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import Header from "../components/Header";
+import Footer from "../components/Footer"
 import Head from "next/head";
 
 export default ({ children }) => (
@@ -30,8 +31,8 @@ export default ({ children }) => (
       main {
         max-width: 95%;
         margin: 0 auto;
+        margin-top: 64px;
         min-height: 100%;
-        height: 100%;
       }
       img {
         max-width: 100%;
@@ -44,5 +45,6 @@ export default ({ children }) => (
     `}</style>
     <Header />
     <main>{children}</main>
+    <Footer />
   </Fragment>
 );

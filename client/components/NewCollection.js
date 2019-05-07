@@ -21,7 +21,7 @@ export default () => (
         margin: 0;
         font-size: 4em;
         color: #ffffff;
-        z-index: 30;
+        z-index: 10;
         top: 50%;
         transform: translateX(-50%) translateY(-50%);
         font-weight: 600;
@@ -31,13 +31,13 @@ export default () => (
         max-height: 100%;
       }
       .grid-item {
-        width: 25vw;
+        width: 22.5vw;
       }
       .grid-item-2 {
-        width: 44%;
+        width: 47%;
       }
       .grid-item-3 {
-        width: 19%;
+        width: 23%;
       }
       img:hover {
         cursor: pointer;
@@ -48,7 +48,7 @@ export default () => (
         New <br /> Collection
       </h1>
       <Masonry
-        style={{ maxWidth: "100%", margin: "0 auto", marginLeft: "15vw" }}
+        style={{ maxWidth: "100%", margin: "0 auto", marginLeft: "13vw" }}
         options={{ itemSelector: ".grid-item", columnWidth: 60 }}
       >
         <div className="grid-item">
