@@ -16,7 +16,7 @@ export default Logo => (
         font-weight: 700;
       }
     `}</style>
-    <Link href="/">
+    <Link href="/" prefetch>
       <div className="logo">
         <h2>CLOF</h2>
       </div>

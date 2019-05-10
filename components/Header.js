@@ -46,7 +46,7 @@ export default Header => (
         <Logo />
         <ul>
           <li>
-            <Link href="/shop">
+            <Link href="/shop" prefetch>
               <a>Shop</a>
             </Link>
           </li>
