@@ -8,7 +8,7 @@ function Shop({ products }) {
     return (
        <Fragment>
            <Head>
-                <title>Better Days</title>
+
             </Head>
            <style>{`
                 #shop {
@@ -20,8 +20,8 @@ function Shop({ products }) {
                     grid-gap: 24px;
                 }
                 #shop h1 {
-                    font-size: 2em;
-                    margin-lef: 32px;
+                    font-size: 1.5rem;
+                    margin-left: 32px;
                     border-right: 16px solid #A9EEC2;
                     font-weight: 700;
                     color: #FFFFFF;

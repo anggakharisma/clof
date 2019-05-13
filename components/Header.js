@@ -8,11 +8,13 @@ export default Header => (
         max-width: 100%;
         background: #FFFFFF;
         position: fixed;
-        z-index: 30;
+        z-index: 10;
         right: 0;
         left: 0;
         top: 0;
         border-bottom: 2px solid #A9EEC2;
+        display: flex;
+        justify-content: space-between;
       }
       h2 {
         padding: 0;
@@ -39,6 +41,9 @@ export default Header => (
       li a:hover {
         border-bottom: 3px solid black;
       }
+      .cart-trigger {
+        margin-right: 80px;
+      }
     `}</style>
 
     <header className="header">
@@ -57,6 +62,9 @@ export default Header => (
           </li>
         </ul>
       </nav>
+      <div className="cart-trigger">
+        <h4>Cart(0)</h4>
+      </div>
     </header>
   </Fragment>
 );
