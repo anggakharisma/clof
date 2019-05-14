@@ -4,7 +4,7 @@ import Footer from "../components/Footer"
 import Head from "next/head";
 import Cart from "../components/Cart";
 
-export default ({ children, title = "CLOF | Clothing Store" }) => {
+function Main({ children, title = "CLOF | Clothing Store" }) {
     return (
       <Fragment>
         <Head>
@@ -51,3 +51,5 @@ export default ({ children, title = "CLOF | Clothing Store" }) => {
       </Fragment>
     )
 };
+
+export default Main;

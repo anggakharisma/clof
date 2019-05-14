@@ -1,8 +1,10 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import Main from '../layouts/main';
 import fetch from 'isomorphic-unfetch';
+import { useAppContext } from '../useAppState';
 
 function Product({ product }) {
+    const { state, actions } = useAppContext();
     return (
         <Fragment>
             <style>{`
@@ -22,7 +24,7 @@ function Product({ product }) {
                     <div className="product-detail">
                         <h1>{product.name}</h1>
                         <h3>$ {product.price}</h3>
-                        <button>Add To Cart</button>
+                        <button onClick={() => actions.addToCart(product)}>Add To Cart</button>
                     </div>
                 </div>
             </Main>

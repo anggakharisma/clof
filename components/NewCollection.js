@@ -21,7 +21,7 @@ export default () => (
         margin: 0;
         font-size: 4em;
         color: #ffffff;
-        z-index: 10;
+        z-index: 5;
         top: 50%;
         transform: translateX(-50%) translateY(-50%);
         font-weight: 600;

@@ -7,9 +7,6 @@ import Product from '../components/Product';
 function Shop({ products }) {
     return (
        <Fragment>
-           <Head>
-
-            </Head>
            <style>{`
                 #shop {
                     margin-top: 160px;
