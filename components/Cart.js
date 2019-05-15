@@ -4,6 +4,7 @@ import { useAppContext } from '../useAppState';
 
 function Cart() {
     const { state, actions } = useAppContext();
+
     return (
         <React.Fragment>
             <style>{`
@@ -18,7 +19,7 @@ function Cart() {
                     top: 0;
                     right: 0;
                     bottom: 0;
-                    transition: all .4s ease-in-out;
+                    transition: all .3s ease-in-out;
                 }
             `}</style>
             <div id="cart-container" style={{ right: state.showCart ? '0': '-100%' }} onClick={actions.toggleCart}>

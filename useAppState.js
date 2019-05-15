@@ -1,4 +1,4 @@
-import { useState, useMemo, useContext, createContext } from 'react';
+import { useState, useEffect, useMemo, useContext, createContext } from 'react';
 
 const AppContext = createContext({});
 
@@ -7,6 +7,10 @@ const useAppState = () => {
         cartItems: [],
         showCart: false
     }
+
+    useEffect(() => {
+        console.log(localStorage);
+    }, []);
 
     const [state, setState] = useState(initialState);
 
@@ -21,7 +25,7 @@ const getActions = setState => ({
     },
     addToCart: (item) => {
         setState(state => {
-            return {...state, cartItems: [...state.cartItems, item] }
+            return {...state, showCart: true, cartItems: [...state.cartItems, item] }
         })
     }
 

@@ -67,7 +67,7 @@ function Header() {
             </ul>
           </nav>
           <div className="cart-trigger">
-            <h4 onClick={actions.toggleCart}>Cart(0)</h4>
+            <h4 onClick={actions.toggleCart}>Cart({ state.cartItems.length })</h4>
           </div>
         </header>
       </Fragment>
