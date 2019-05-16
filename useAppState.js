@@ -3,13 +3,13 @@ import { useState, useEffect, useMemo, useContext, createContext } from 'react';
 const AppContext = createContext({});
 
 const useAppState = () => {
-    const initialState = {
+    let initialState = {
         cartItems: [],
         showCart: false
     }
 
     useEffect(() => {
-        console.log(localStorage);
+        initialState.cartItems = JSON.parse(localStorage.getItem('cart')) || [];
     }, []);
 
     const [state, setState] = useState(initialState);
@@ -20,11 +20,15 @@ const useAppState = () => {
 }
 
 const getActions = setState => ({
+    getCart: () => {
+        return JSON.parse(localStorage.getItem('cart')) || [];
+    },
     toggleCart: () => {
         setState(state => ({ ...state, showCart: !state.showCart }));
     },
     addToCart: (item) => {
         setState(state => {
+            localStorage.setItem('cart', JSON.stringify([...state.cartItems, item]));
             return {...state, showCart: true, cartItems: [...state.cartItems, item] }
         })
     }

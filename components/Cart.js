@@ -4,7 +4,6 @@ import { useAppContext } from '../useAppState';
 
 function Cart() {
     const { state, actions } = useAppContext();
-
     return (
         <React.Fragment>
             <style>{`

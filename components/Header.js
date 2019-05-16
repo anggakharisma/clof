@@ -1,10 +1,14 @@
-import { Fragment } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { useAppContext } from '../useAppState';
 import Logo from "./Logo";
 import Link from "next/link";
 
 function Header() {
+    const [ cartLength, setCartLength ] = useState(0);
     const { state, actions } = useAppContext();
+    useEffect(() => {
+        setCartLength(actions.getCart().length);
+    });
     return (
       <Fragment>
         <style>{`
@@ -67,7 +71,7 @@ function Header() {
             </ul>
           </nav>
           <div className="cart-trigger">
-            <h4 onClick={actions.toggleCart}>Cart({ state.cartItems.length })</h4>
+            <h4 onClick={actions.toggleCart}>Cart({ cartLength })</h4>
           </div>
         </header>
       </Fragment>
