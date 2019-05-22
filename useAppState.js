@@ -37,12 +37,10 @@ const getActions = setState => ({
         return { ...state, showCart: true, cartItems: newCart };
       }
       let newCart = state.cartItems.map(cartItem => {
-        console.log(cartItem.qty);
         return cartItem._id === item._id
           ? { ...cartItem, qty: ++cartItem.qty }
           : cartItem;
       });
-      console.log(newCart);
       localStorage.setItem("cart", JSON.stringify(newCart));
       return { ...state, showCart: true, cartItems: newCart };
     });

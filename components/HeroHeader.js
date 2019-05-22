@@ -54,9 +54,13 @@ export default () => (
         position: relative;
         align-items: center;
       }
+      @media (max-width: 768px) {
+        #main-hero {
+          padding: 24px;
+        }
+      }
     `}</style>
     <section id="main-hero">
-
       <h1>
         Clothes <br /> For <br /> All
       </h1>
