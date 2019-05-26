@@ -9,6 +9,12 @@ function Cart() {
     setCartItems(actions.getCart());
   });
 
+  const deleteCartItem = id => {
+    if (confirm("You sure want to delete ?")) {
+      actions.deleteCartItem(id);
+    }
+  };
+
   return (
     <React.Fragment>
       <style>{`
@@ -28,10 +34,10 @@ function Cart() {
                 }
                 #cart-container h2 {
                     margin-left: 48px;
-                    color: #FF9E9E;
                 }
                 .cart-item-detail {
                     display: grid;
+                    position: relative;
                     grid-template-columns: 1fr 1fr;
                     padding: 16px;
                     grid-gap: 24px;
@@ -43,14 +49,13 @@ function Cart() {
                     position: absolute;
                     top: 28px;
                     left: 24px
-                    color: #FF9E9E;
                 }
                 .close-button:hover {
                   cursor: pointer;
                 }
                 .close-button h3 {
                   margin: 0;
-                  color: #FF9E9E;
+                  color: #000;
                 }
                 #cart-container h6 {
                   margin: 0;
@@ -59,6 +64,28 @@ function Cart() {
                   margin: 8px 0;
                   color: #969696;
                   font-weight: 400;
+                }
+                .checkout-button {
+                  border: none;
+                  background: #A9EEC2;
+                  color: #000000;
+                  padding: 8px;
+                  font-weight: 400;
+                }
+                .delete-item-button {
+                  margin: 0;
+                  padding: 0;
+                  width: 22px;
+                  height: 22px;
+                  padding: 2px;
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  border: none;
+                  background: #FF9E9E;
+                  color: #FFF; 
+                  text-align: center;
+                  border-radius: 50%;
                 }
             `}</style>
       <div
@@ -69,9 +96,16 @@ function Cart() {
           <h3>X</h3>
         </div>
         <h2>Cart</h2>
+        {cartItems.length < 1 && <h4>No item(s) on cart.</h4>}
         <div className="cart-items">
           {cartItems.reverse().map(item => (
             <div className="cart-item-detail" key={item._id}>
+              <div
+                className="delete-item-button"
+                onClick={() => deleteCartItem(item._id)}
+              >
+                X
+              </div>
               <img
                 src={process.env.API_URL + item.images}
                 alt={item.name + "image"}
@@ -81,11 +115,18 @@ function Cart() {
                   {item.name} ( {item.qty} )
                 </h6>
                 <h6 className="sub-total">
-                  Sub Total : {item.qty * item.price}
+                  Sub Total : $ {item.qty * item.price}
                 </h6>
               </div>
             </div>
           ))}
+        </div>
+        <h4 style={{ textAlign: "center" }}>
+          Total :{" "}
+          {cartItems.reduce((prev, curr) => prev + curr.price * curr.qty, 0)}{" "}
+        </h4>
+        <div style={{ textAlign: "center" }}>
+          <button className="checkout-button">Checkout</button>
         </div>
       </div>
     </React.Fragment>

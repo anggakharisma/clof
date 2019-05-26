@@ -26,6 +26,15 @@ const getActions = setState => ({
   toggleCart: () => {
     setState(state => ({ ...state, showCart: !state.showCart }));
   },
+  deleteCartItem: itemId => {
+    setState(state => {
+      let newCartItems = state.cartItems.filter(
+        cartItem => cartItem._id !== itemId
+      );
+      localStorage.setItem("cart", JSON.stringify(newCartItems));
+      return { ...state, cartItems: newCartItems };
+    });
+  },
   addToCart: item => {
     setState(state => {
       let cartItemFound = state.cartItems.find(
