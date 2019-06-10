@@ -17,6 +17,11 @@ function Product({ product }) {
                     width: 70%;
                     margin: auto;
                 }
+                .product-button {
+                    background: #FFF;
+                    border: 2px solid #000;
+                    color: #000;
+                }
             `}</style>
             <Main title={product.name}>
                 <div id="product-main">
@@ -24,7 +29,7 @@ function Product({ product }) {
                     <div className="product-detail">
                         <h1>{product.name}</h1>
                         <h3>$ {product.price}</h3>
-                        <button onClick={() => actions.addToCart(product)}>Add To Cart</button>
+                        <button className="product-button" onClick={() => actions.addToCart(product)}>Add To Cart</button>
                     </div>
                 </div>
             </Main>

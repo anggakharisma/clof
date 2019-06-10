@@ -14,6 +14,7 @@ function Main({ children, title = "CLOF | Clothing Store" }) {
           href="https://fonts.googleapis.com/css?family=Dosis:700|Nunito:300,400,600,700,800"
           rel="stylesheet"
         />
+        <script src="https://js.stripe.com/v3/" />
       </Head>
       <style jsx global>{`
         * {

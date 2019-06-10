@@ -1,19 +1,25 @@
 import React from "react";
 import { useAppContext } from "../useAppState";
+import CheckoutForm from "./CheckoutForm";
 
 function Cart() {
-  const { state, actions } = useAppContext();
+  const {state, actions} = useAppContext();
   const [cartItems, setCartItems] = React.useState([]);
+  const [isClient, setIsClient] = React.useState(false);
 
   React.useEffect(() => {
     setCartItems(actions.getCart());
-  });
+    setIsClient(true);
+  }, [cartItems]);
 
   const deleteCartItem = id => {
     if (confirm("You sure want to delete ?")) {
       actions.deleteCartItem(id);
     }
   };
+
+  let formElement = <div />;
+  if (isClient) formElement = <CheckoutForm />;
 
   return (
     <React.Fragment>
@@ -22,8 +28,8 @@ function Cart() {
                     height: 100vh;
                     width: 320px;
                     padding: 24px;
-                    z-index: 11;
-                    overflow-y: scroll;
+                    padding-bottom: 40px;
+                    z-index: 11; overflow-y: scroll;
                     background: #fcfcfc;
                     box-shadow: -2px 0 4px 0 #efefef;
                     position: fixed;
@@ -59,7 +65,7 @@ function Cart() {
                 }
                 #cart-container h6 {
                   margin: 0;
-                } 
+                }
                 .sub-total {
                   margin: 8px 0;
                   color: #969696;
@@ -69,21 +75,21 @@ function Cart() {
                   border: none;
                   background: #A9EEC2;
                   color: #000000;
-                  padding: 8px;
+                  padding: 8px 12px;
                   font-weight: 400;
                 }
                 .delete-item-button {
                   margin: 0;
                   padding: 0;
-                  width: 22px;
-                  height: 22px;
+                  width: 24px;
+                  height: 24px;
                   padding: 2px;
                   position: absolute;
                   top: 0;
                   right: 0;
                   border: none;
                   background: #FF9E9E;
-                  color: #FFF; 
+                  color: #FFF;
                   text-align: center;
                   border-radius: 50%;
                 }
@@ -122,11 +128,11 @@ function Cart() {
           ))}
         </div>
         <h4 style={{ textAlign: "center" }}>
-          Total :{" "}
+          Total : ${" "}
           {cartItems.reduce((prev, curr) => prev + curr.price * curr.qty, 0)}{" "}
         </h4>
-        <div style={{ textAlign: "center" }}>
-          <button className="checkout-button">Checkout</button>
+        <div style={{ textAlign: "center", padding: "24px" }}>
+          {formElement}
         </div>
       </div>
     </React.Fragment>
