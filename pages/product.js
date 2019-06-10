@@ -19,8 +19,15 @@ function Product({ product }) {
                 }
                 .product-button {
                     background: #FFF;
-                    border: 2px solid #000;
+                    border: 1px solid #000;
                     color: #000;
+                    padding: 8px 16px;
+                    transition: all .2s ease-in-out;
+                }
+                .product-button:hover {
+                    background: #000;
+                    color: #FFF;
+                    cursor: pointer;
                 }
             `}</style>
             <Main title={product.name}>
