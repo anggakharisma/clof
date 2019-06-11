@@ -6,7 +6,6 @@ import Product from "../components/Product";
 
 function Shop({ products }) {
     const [ isListExpanded, setIsListExpanded ] = useState(false);
-    console.log(isListExpanded);
   return (
     <Fragment>
       <style jsx="true" global="true">{`
@@ -52,7 +51,7 @@ function Shop({ products }) {
                }
                .category-list-item {
                     display: inline-block;
-                    transition: all .3s ease-in-out;
+                    transition: all .3s linear;
                     opacity: 0;
                     line-height: 2;
                }
