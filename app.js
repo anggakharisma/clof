@@ -7,12 +7,12 @@ var app = next({ dev });
 var cors = require('cors');
 var product = require('./models/products');
 var handle = app.getRequestHandler();
-
+var stripe = require("stripe")("sk_test_DGsvrshHfoVcZsezOPRRztuZ");
 db();
 
 app.prepare().then(function() {
     var server = express();
-
+    server.use(require("body-parser").text());
     server.use(express.json());
     server.use(cors());
     server.use(express.static('public'));
@@ -48,11 +48,23 @@ app.prepare().then(function() {
         return app.render(req, res, '/product', { id: req.params.id })
     });
 
+    server.post('/charge', async function(req, res) {
+        try {
+            let { status } = await stripe.charges.create({
+                amount: 4000,
+                currency: "usd",
+                description: "Pay",
+                source: req.body
+            });
+            res.json({status});
+        } catch (err) {
+            res.status(500).end();
+        }
+    });
+
     server.get('*', (req, res) => {
         return handle(req, res)
     });
-
-
 
     server.listen(properties.PORT, () => {
         console.log("Server running on port 3000");

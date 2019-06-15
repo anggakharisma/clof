@@ -6,6 +6,7 @@ function Cart() {
   const {state, actions} = useAppContext();
   const [cartItems, setCartItems] = React.useState([]);
   const [isClient, setIsClient] = React.useState(false);
+  const [cartTotal, setCartTotal] = React.useState(0);
 
   React.useEffect(() => {
     setCartItems(actions.getCart());

@@ -2,13 +2,23 @@ import React from "react";
 import {
   injectStripe,
   CardElement,
-  PaymentRequestButtonElement
 } from "react-stripe-elements";
+import fetch from 'isomorphic-fetch';
 
-function CheckoutElement() {
-  const handleSubmitCheckout = (e) => {
+function CheckoutElement({ stripe }) {
+  const handleSubmitCheckout = async (e) => {
       e.preventDefault();
-      console.log("yeet");
+      let { token } = await stripe.createToken({ name: "Ricky Martin 2" });
+      let response = await fetch(process.env.API_URL + "/charge", {
+          method: "POST",
+          headers: { "Content-Type": "text/plain" },
+          body: token.id
+      });
+      if(response.ok) {
+          console.log("Purchase Completed");
+      } else {
+          console.log(response);
+      }
   }
 
   return (
