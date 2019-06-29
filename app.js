@@ -7,7 +7,7 @@ var app = next({ dev });
 var cors = require('cors');
 var product = require('./models/products');
 var handle = app.getRequestHandler();
-var stripe = require("stripe")("sk_test_DGsvrshHfoVcZsezOPRRztuZ");
+var stripe = require("stripe")(process.env.STRIPE_API);
 db();
 
 app.prepare().then(function() {
@@ -49,12 +49,13 @@ app.prepare().then(function() {
     });
 
     server.post('/charge', async function(req, res) {
+        console.log(req.body);
         try {
             let { status } = await stripe.charges.create({
-                amount: 4000,
+                amount: req.body.amount,
                 currency: "usd",
                 description: "Pay",
-                source: req.body
+                source: req.body.token
             });
             res.json({status});
         } catch (err) {

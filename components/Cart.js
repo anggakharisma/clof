@@ -10,8 +10,10 @@ function Cart() {
 
   React.useEffect(() => {
     setCartItems(actions.getCart());
+    setCartTotal(cartItems.reduce((prev, curr) => prev + curr.price * curr.qty, 0));
     setIsClient(true);
   }, [cartItems]);
+
 
   const deleteCartItem = id => {
     if (confirm("You sure want to delete ?")) {
@@ -20,7 +22,7 @@ function Cart() {
   };
 
   let formElement = <div />;
-  if (isClient) formElement = <CheckoutForm />;
+  if (isClient) formElement = <CheckoutForm cartTotal={cartTotal} />;
 
   return (
     <React.Fragment>
@@ -129,8 +131,7 @@ function Cart() {
           ))}
         </div>
         <h4 style={{ textAlign: "center" }}>
-          Total : ${" "}
-          {cartItems.reduce((prev, curr) => prev + curr.price * curr.qty, 0)}{" "}
+          Total : $ {cartTotal}
         </h4>
         <div style={{ textAlign: "center", padding: "24px" }}>
           {formElement}
