@@ -1,0 +1,252 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8" class="next-head"/><meta name="viewport" content="width=device-width, initial-scale=1" class="jsx-956124065 next-head"/><title class="jsx-956124065 next-head">CLOF | Product Page</title><link href="https://fonts.googleapis.com/css?family=Dosis:700|Nunito:300,400,600,700,800" rel="stylesheet" class="jsx-956124065 next-head"/><script src="https://js.stripe.com/v3/" class="jsx-956124065 next-head"></script><link rel="preload" href="/_next/static/r0GI7caLs3BYbDDfGbwQG/pages/shop.js" as="script"/><link rel="preload" href="/_next/static/r0GI7caLs3BYbDDfGbwQG/pages/_app.js" as="script"/><link rel="preload" href="/_next/static/runtime/webpack-a79426b5e11f0ba5879d.js" as="script"/><link rel="preload" href="/_next/static/chunks/commons.b1a2472ffe24d3f65f79.js" as="script"/><link rel="preload" href="/_next/static/runtime/main-8265ea5e4f59eccb31ae.js" as="script"/><style id="__jsx-543951032">#shop{margin-top:160px;}.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));grid-gap:24px;}#shop>ul{height:60px;display:inline-block;background:#FF9E9E;color:#FFF;padding:8px;padding-left:16px;padding-right:72px;position:fixed;top:12%;}#shop span{background:#A9EEC2;padding:0 8px;font-weight:700;position:absolute;right:16px;margin:6px;font-size:1.25rem;}#shop span:hover{cursor:pointer;}#shop ul li{margin:8px 0;}#shop li{margin:16px 0;font-size:1.3rem;font-weight:700;text-transform:uppercase;}.category-list-item{display:inline-block;-webkit-transition:all .3s linear;transition:all .3s linear;opacity:0;line-height:2;}</style><style id="__jsx-956124065">*{box-sizing:border-box;}body{font-family:"Nunito",san-serif;}body,html{margin:0;padding:0;min-height:100%;width:100%;height:100%;}main{max-width:95%;margin:0 auto;margin-top:64px;min-height:100%;}img{max-width:100%;}#__next{min-height:100%;height:100%;}</style></head><body><div id="__next"><style>
+          header {
+            max-width: 100%;
+            background: #FFFFFF;
+            position: fixed;
+            z-index: 10;
+            right: 0;
+            left: 0;
+            top: 0;
+            border-bottom: 2px solid #A9EEC2;
+            display: flex;
+            justify-content: space-between;
+          }
+          h2 {
+            padding: 0;
+            margin: 0;
+          }
+          nav {
+            display: flex;
+            align-items: center;
+          }
+          ul {
+            display: flex;
+            list-style-type: none;
+          }
+          li {
+            margin: 0 24px;
+            font-weight: 600;
+          }
+          li a {
+            text-decoration: none;
+            color: #000000;
+            padding-bottom: 4px;
+            transition: all .2s linear;
+          }
+          li a:hover {
+            border-bottom: 3px solid black;
+          }
+          .cart-trigger {
+            margin-right: 80px;
+          }
+        </style><header class="header"><nav><style>
+      .logo {
+        background: #A9EEC2;
+        height: 100%;
+        padding: 14px 48px;
+      }
+      .logo:hover {
+        cursor: pointer;
+      }
+      h2 {
+        font-family: Dosis, sans-serif;
+        font-weight: 700;
+      }
+    </style><div class="logo"><h2>CLOF</h2></div><ul><li><a href="/shop/">Shop</a></li><li><a href="/about/">About</a></li></ul></nav><div class="cart-trigger"><h4>Cart(<!-- -->0<!-- -->)</h4></div></header><style>
+                #cart-container {
+                    height: 100vh;
+                    width: 320px;
+                    padding: 24px;
+                    padding-bottom: 40px;
+                    z-index: 11; overflow-y: scroll;
+                    background: #fcfcfc;
+                    box-shadow: -2px 0 4px 0 #efefef;
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    transition: all .3s ease-in-out;
+                }
+                #cart-container h2 {
+                    margin-left: 48px;
+                }
+                .cart-item-detail {
+                    display: grid;
+                    position: relative;
+                    grid-template-columns: 1fr 1fr;
+                    padding: 16px;
+                    grid-gap: 24px;
+                }
+                .cart-item-detail img {
+                    width: 80px;
+                }
+                .close-button {
+                    position: absolute;
+                    top: 28px;
+                    left: 24px
+                }
+                .close-button:hover {
+                  cursor: pointer;
+                }
+                .close-button h3 {
+                  margin: 0;
+                  color: #000;
+                }
+                #cart-container h6 {
+                  margin: 0;
+                }
+                .sub-total {
+                  margin: 8px 0;
+                  color: #969696;
+                  font-weight: 400;
+                }
+                .checkout-button {
+                  border: none;
+                  background: #A9EEC2;
+                  color: #000000;
+                  padding: 8px 12px;
+                  font-weight: 400;
+                }
+                .delete-item-button {
+                  margin: 0;
+                  padding: 0;
+                  width: 24px;
+                  height: 24px;
+                  padding: 2px;
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  border: none;
+                  background: #FF9E9E;
+                  color: #FFF;
+                  text-align: center;
+                  border-radius: 50%;
+                }
+            </style><div id="cart-container" style="right:-100%"><div class="close-button"><h3>X</h3></div><h2>Cart</h2><h4>No item(s) on cart.</h4><div class="cart-items"></div><h4 style="text-align:center">Total : $ <!-- -->0</h4><div style="text-align:center;padding:24px"><div></div></div></div><main class="jsx-956124065"><article id="shop" class="jsx-543951032"><ul style="height:60px" class="jsx-543951032"><span class="jsx-543951032">+</span><li class="jsx-543951032">All Products</li><ul style="opacity:0" class="jsx-543951032 category-list-item"><li class="jsx-543951032">Outerwear</li><li class="jsx-543951032">Accessories</li></ul></ul><div class="jsx-543951032 products"><style>
+                .product-card {
+                    margin: auto;
+                    width: 75%;
+                    padding: 24px;
+                    transition: all .1s ease-in-out;
+                    border-radius: 16px;
+                }
+                .product-card:hover {
+                    cursor: pointer;
+                }
+                .product-card h3 {
+                    text-align: center;
+                }
+            </style><div class="product-card" style="background-color:#FFFFFF"><img src="http://localhost:3000//images/yellow-jacket.png" alt="Yellow Jacket Image Product"/><h3>Yellow Jacket</h3></div><style>
+                .product-card {
+                    margin: auto;
+                    width: 75%;
+                    padding: 24px;
+                    transition: all .1s ease-in-out;
+                    border-radius: 16px;
+                }
+                .product-card:hover {
+                    cursor: pointer;
+                }
+                .product-card h3 {
+                    text-align: center;
+                }
+            </style><div class="product-card" style="background-color:#FFFFFF"><img src="http://localhost:3000//images/black-hoodie.png" alt="Black Hoodie Image Product"/><h3>Black Hoodie</h3></div><style>
+                .product-card {
+                    margin: auto;
+                    width: 75%;
+                    padding: 24px;
+                    transition: all .1s ease-in-out;
+                    border-radius: 16px;
+                }
+                .product-card:hover {
+                    cursor: pointer;
+                }
+                .product-card h3 {
+                    text-align: center;
+                }
+            </style><div class="product-card" style="background-color:#FFFFFF"><img src="http://localhost:3000//images/glasses1.png" alt="Cool Glasses Image Product"/><h3>Cool Glasses</h3></div><style>
+                .product-card {
+                    margin: auto;
+                    width: 75%;
+                    padding: 24px;
+                    transition: all .1s ease-in-out;
+                    border-radius: 16px;
+                }
+                .product-card:hover {
+                    cursor: pointer;
+                }
+                .product-card h3 {
+                    text-align: center;
+                }
+            </style><div class="product-card" style="background-color:#FFFFFF"><img src="http://localhost:3000//images/shirt1.png" alt="Shirt One Image Product"/><h3>Shirt One</h3></div><style>
+                .product-card {
+                    margin: auto;
+                    width: 75%;
+                    padding: 24px;
+                    transition: all .1s ease-in-out;
+                    border-radius: 16px;
+                }
+                .product-card:hover {
+                    cursor: pointer;
+                }
+                .product-card h3 {
+                    text-align: center;
+                }
+            </style><div class="product-card" style="background-color:#FFFFFF"><img src="http://localhost:3000//images/shirt2.png" alt="Shirt Two Image Product"/><h3>Shirt Two</h3></div><style>
+                .product-card {
+                    margin: auto;
+                    width: 75%;
+                    padding: 24px;
+                    transition: all .1s ease-in-out;
+                    border-radius: 16px;
+                }
+                .product-card:hover {
+                    cursor: pointer;
+                }
+                .product-card h3 {
+                    text-align: center;
+                }
+            </style><div class="product-card" style="background-color:#FFFFFF"><img src="http://localhost:3000//images/tshirt1.png" alt="T - Shirt One Image Product"/><h3>T - Shirt One</h3></div><style>
+                .product-card {
+                    margin: auto;
+                    width: 75%;
+                    padding: 24px;
+                    transition: all .1s ease-in-out;
+                    border-radius: 16px;
+                }
+                .product-card:hover {
+                    cursor: pointer;
+                }
+                .product-card h3 {
+                    text-align: center;
+                }
+            </style><div class="product-card" style="background-color:#FFFFFF"><img src="http://localhost:3000//images/tshirt2.png" alt="T - Shirt Two Image Product"/><h3>T - Shirt Two</h3></div><style>
+                .product-card {
+                    margin: auto;
+                    width: 75%;
+                    padding: 24px;
+                    transition: all .1s ease-in-out;
+                    border-radius: 16px;
+                }
+                .product-card:hover {
+                    cursor: pointer;
+                }
+                .product-card h3 {
+                    text-align: center;
+                }
+            </style><div class="product-card" style="background-color:#FFFFFF"><img src="http://localhost:3000//images/jeans-jacket.png" alt="XR Jacket Image Product"/><h3>XR Jacket</h3></div></div></article></main><style>
+            footer {
+                width: 100%;
+                padding: 40px;
+                position: absolute;
+                background: #A9EEC2;
+                absolute: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            ul {
+                margin: 0;
+                padding: 0;
+            }
+        </style><footer><ul class="links"><li>Instagram</li><li>Youtube</li><li>Facebook</li></ul></footer></div><script id="__NEXT_DATA__" type="application/json">{"dataManager":"[]","props":{"pageProps":{"products":[{"_id":"5d1dadb878564032d86eb860","name":"Yellow Jacket","price":1200,"images":"/images/yellow-jacket.png","createdAt":"2019-07-04T07:41:44.355Z","updatedAt":"2019-07-04T07:41:44.355Z","__v":0},{"_id":"5d1dadb878564032d86eb861","name":"Black Hoodie","price":2250,"images":"/images/black-hoodie.png","createdAt":"2019-07-04T07:41:44.357Z","updatedAt":"2019-07-04T07:41:44.357Z","__v":0},{"_id":"5d1dadb878564032d86eb862","name":"Cool Glasses","price":300,"images":"/images/glasses1.png","createdAt":"2019-07-04T07:41:44.357Z","updatedAt":"2019-07-04T07:41:44.357Z","__v":0},{"_id":"5d1dadb878564032d86eb863","name":"Shirt One","price":300,"images":"/images/shirt1.png","createdAt":"2019-07-04T07:41:44.358Z","updatedAt":"2019-07-04T07:41:44.358Z","__v":0},{"_id":"5d1dadb878564032d86eb864","name":"Shirt Two","price":335,"images":"/images/shirt2.png","createdAt":"2019-07-04T07:41:44.358Z","updatedAt":"2019-07-04T07:41:44.358Z","__v":0},{"_id":"5d1dadb878564032d86eb865","name":"T - Shirt One","price":150,"images":"/images/tshirt1.png","createdAt":"2019-07-04T07:41:44.358Z","updatedAt":"2019-07-04T07:41:44.358Z","__v":0},{"_id":"5d1dadb878564032d86eb866","name":"T - Shirt Two","price":150,"images":"/images/tshirt2.png","createdAt":"2019-07-04T07:41:44.358Z","updatedAt":"2019-07-04T07:41:44.358Z","__v":0},{"_id":"5d1dadb878564032d86eb867","name":"XR Jacket","price":700,"images":"/images/jeans-jacket.png","createdAt":"2019-07-04T07:41:44.358Z","updatedAt":"2019-07-04T07:41:44.358Z","__v":0}]}},"page":"/shop","query":{},"buildId":"r0GI7caLs3BYbDDfGbwQG","dynamicBuildId":false,"nextExport":true}</script><script async="" id="__NEXT_PAGE__/shop" src="/_next/static/r0GI7caLs3BYbDDfGbwQG/pages/shop.js"></script><script async="" id="__NEXT_PAGE__/_app" src="/_next/static/r0GI7caLs3BYbDDfGbwQG/pages/_app.js"></script><script src="/_next/static/runtime/webpack-a79426b5e11f0ba5879d.js" async=""></script><script src="/_next/static/chunks/commons.b1a2472ffe24d3f65f79.js" async=""></script><script src="/_next/static/runtime/main-8265ea5e4f59eccb31ae.js" async=""></script></body></html>
