@@ -2,7 +2,7 @@ import { Fragment, Component, useState } from 'react';
 import Link from 'next/link';
 
 function Product({ image, name, id, price }) {
-    const [bgColor, setBgColor] = useState(["#FFFFFF","#FF9E9E", "#fad284", "#A9EEC2"]);
+    const [bgColor, setBgColor] = useState(["#FFFFFF", "#FF9E9E", "#fad284", "#A9EEC2"]);
     const [selectedIndex, setSelectedIndex] = useState(0);
     return (
         <Fragment>
@@ -23,13 +23,13 @@ function Product({ image, name, id, price }) {
             `}</style>
             <Link href={"/product/" + id}>
                 <div className="product-card" style={{ backgroundColor: bgColor[selectedIndex] }} onMouseOver={() => {
-                    setSelectedIndex(Math.floor(Math.random() * 3) + 1 );
+                    setSelectedIndex(Math.floor(Math.random() * 3) + 1);
                 }} onMouseOut={() => {
                     setSelectedIndex(0);
                 }}>
-                        <img src={process.env.API_URL + '/' +  image} alt={name + " Image Product"} />
-                        <h3>{name}</h3>
-                        {!image && <h1>Loading</h1>}
+                    <img src={process.env.API_URL + '/' + image} alt={name + " Image Product"} />
+                    <h3>{name}</h3>
+                    {!image && <h1>Loading</h1>}
                 </div>
             </Link>
         </Fragment>

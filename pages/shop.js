@@ -5,7 +5,7 @@ import fetch from "isomorphic-unfetch";
 import Product from "../components/Product";
 
 function Shop({ products }) {
-    const [ isListExpanded, setIsListExpanded ] = useState(false);
+  const [isListExpanded, setIsListExpanded] = useState(false);
   return (
     <Fragment>
       <style jsx="true" global="true">{`
@@ -58,16 +58,16 @@ function Shop({ products }) {
            `}</style>
       <Main title="CLOF | Product Page">
         <article id="shop">
-            <ul style={{ height: isListExpanded ? "auto": "60px" }}>
-                <span onClick={() => setIsListExpanded(!isListExpanded)}>+</span>
-                <li>All Products</li>
-                <ul className="category-list-item" style={{
-                    opacity: isListExpanded ? "1" : "0"
-                }}>
-                    <li>Outerwear</li>
-                    <li>Accessories</li>
-                </ul>
-           </ul>
+          <ul style={{ height: isListExpanded ? "auto" : "60px" }}>
+            <span onClick={() => setIsListExpanded(!isListExpanded)}>+</span>
+            <li>All Products</li>
+            <ul className="category-list-item" style={{
+              opacity: isListExpanded ? "1" : "0"
+            }}>
+              <li>Outerwear</li>
+              <li>Accessories</li>
+            </ul>
+          </ul>
           <div className="products">
             {products.map((product, index) => (
               <Product

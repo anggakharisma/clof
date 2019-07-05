@@ -3,7 +3,7 @@ import { useAppContext } from "../useAppState";
 import CheckoutForm from "./CheckoutForm";
 
 function Cart() {
-  const {state, actions} = useAppContext();
+  const { state, actions } = useAppContext();
   const [cartItems, setCartItems] = React.useState([]);
   const [isClient, setIsClient] = React.useState(false);
   const [cartTotal, setCartTotal] = React.useState(0);
@@ -116,7 +116,7 @@ function Cart() {
                 X
               </div>
               <img
-                src={process.env.API_URL + item.images}
+                src={item.images}
                 alt={item.name + "image"}
               />
               <div style={{ margin: "auto" }}>

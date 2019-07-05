@@ -1,11 +1,11 @@
 {
 	"version": 2,
-	"alias": "my-aliased-nextjs-project",
-	"name": "my-nextjs-project",
+	"alias": "cfls",
+	"name": "clof",
 	"builds": [
 		{
-			"src": "next.config.js",
-			"use": "@now/next"
+			"src": "app.js",
+			"use": "@now/node"
 		}
 	]
 }

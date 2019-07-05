@@ -1,21 +1,21 @@
 var seeder = require('mongoose-seed');
 
 // Connect to MongoDB via Mongoose
-seeder.connect('mongodb://localhost:27017/clof', function() {
+seeder.connect('mongodb+srv://akape:jABsllyVRwjBXr1X@cluster0-vfsfg.mongodb.net/test?retryWrites=true&w=majority', function () {
 
-  // Load Mongoose models
-  seeder.loadModels([
-      'models/products.js',
-  ]);
+    // Load Mongoose models
+    seeder.loadModels([
+        'models/products.js',
+    ]);
 
-  // Clear specified collections
-  seeder.clearModels(['Product'], function() {
+    // Clear specified collections
+    seeder.clearModels(['Product'], function () {
 
-    // Callback to populate DB once collections have been cleared
-    seeder.populateModels(data, function() {
-      seeder.disconnect();
+        // Callback to populate DB once collections have been cleared
+        seeder.populateModels(data, function () {
+            seeder.disconnect();
+        });
     });
-  });
 });
 
 var data = [
