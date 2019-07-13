@@ -1,7 +1,8 @@
+require('dotenv').config();
 var seeder = require('mongoose-seed');
 
 // Connect to MongoDB via Mongoose
-seeder.connect('mongodb+srv://akape:jABsllyVRwjBXr1X@cluster0-vfsfg.mongodb.net/test?retryWrites=true&w=majority', function () {
+seeder.connect(process.env.MONGO_URL, function () {
 
     // Load Mongoose models
     seeder.loadModels([

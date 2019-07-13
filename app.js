@@ -1,3 +1,4 @@
+require('dotenv').config();
 var express = require("express");
 var next = require("next");
 var properties = require("./config/properties");
@@ -8,9 +9,11 @@ var cors = require('cors');
 var product = require('./models/products');
 var handle = app.getRequestHandler();
 var stripe = require("stripe")(process.env.STRIPE_API);
+
+//Initialize Databases
 db();
 
-app.prepare().then(function() {
+app.prepare().then(function () {
     var server = express();
     server.use(require("body-parser").text());
     server.use(express.json());
@@ -18,7 +21,7 @@ app.prepare().then(function() {
     server.use(express.static('public'));
 
     server.get("/api/products", (req, res, next) => {
-        product.find({}, function(err, products) {
+        product.find({}, function (err, products) {
             res.json(products);
         });
     });
@@ -31,24 +34,24 @@ app.prepare().then(function() {
             images: req.body.images
         });
 
-        newProduct.save(function(err) {
-            if(err) res.json(err);
-            res.json({message: "Success"});
+        newProduct.save(function (err) {
+            if (err) res.json(err);
+            res.json({ message: "Success" });
         })
     });
 
-    server.get('/api/products/:id', function(req, res) {
-        product.findById(req.params.id, function(err, product) {
-            if(err) res.json(err);
+    server.get('/api/products/:id', function (req, res) {
+        product.findById(req.params.id, function (err, product) {
+            if (err) res.json(err);
             res.json(product);
         })
     });
 
-    server.get('/product/:id', function(req, res) {
+    server.get('/product/:id', function (req, res) {
         return app.render(req, res, '/product', { id: req.params.id })
     });
 
-    server.post('/charge', async function(req, res) {
+    server.post('/charge', async function (req, res) {
         console.log(req.body);
         try {
             let { status } = await stripe.charges.create({
@@ -57,7 +60,7 @@ app.prepare().then(function() {
                 description: "Pay",
                 source: req.body.token
             });
-            res.json({status});
+            res.json({ status });
         } catch (err) {
             res.status(500).end();
         }
