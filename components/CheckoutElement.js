@@ -15,7 +15,7 @@ function CheckoutElement({ stripe, cartTotal }) {
       body: JSON.stringify({ token: token.id, amount: cartTotal })
     });
     if (response.ok) {
-      console.log("Purchase Completed");
+      alert("Purchase Completed");
     } else {
       console.log(response);
     }
