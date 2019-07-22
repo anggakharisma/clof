@@ -86,7 +86,7 @@ function Shop({ products }) {
 }
 
 Shop.getInitialProps = async ({ req }) => {
-  const res = await fetch(process.env.API_URL + "/api/products");
+  const res = await fetch("/api/products");
   const json = await res.json();
   return { products: json };
 };
