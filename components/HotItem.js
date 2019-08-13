@@ -1,7 +1,7 @@
-import { Fragment } from 'react';
-export default() => (
-    <Fragment>
-        <style>{`
+import { Fragment } from "react";
+export default () => (
+  <Fragment>
+    <style>{`
             #hot-item {
                 width: 100%;
                 height: 100%;
@@ -18,10 +18,15 @@ export default() => (
                 max-width: 32%;
                 display: inline-block;
             }
+            @media(max-width: 600px) {
+                h1 {
+                    font-size: 1.5em;
+                }
+            }
         `}</style>
-        <section id="hot-item">
-            <img src="/static/hot.png" alt="Hot image picture" />
-            <h1>HOT ITEM</h1>
-        </section>
-    </Fragment>
-)
+    <section id="hot-item">
+      <img src="/static/hot.png" alt="Hot image picture" />
+      <h1>HOT ITEM</h1>
+    </section>
+  </Fragment>
+);
