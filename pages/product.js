@@ -10,7 +10,7 @@ function Product({ product }) {
       <style>{`
                 #product-main {
                     display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));;
+                    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));;
                     padding: 40px;
                 }
                 #product-main img {
